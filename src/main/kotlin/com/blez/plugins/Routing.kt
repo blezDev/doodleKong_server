@@ -9,6 +9,7 @@ import io.ktor.server.request.*
 
 fun Application.configureRouting() {
     install(Routing){
+
         Root()
         CreateRoomRoute()
         getRoomsRoute()

@@ -24,13 +24,16 @@ fun Route.CreateRoomRoute(){
             if(server.rooms[roomRequest.name] != null){
                     call.respond(HttpStatusCode.OK,
                     BasicApiResponse(false,"Room already exists."))
+                    print("room exist")
                     return@post
                 }
             if(roomRequest.maxPlayer < 2){
                 call.respond(
                     HttpStatusCode.OK,
                     BasicApiResponse(false,"The minimum room size is 2.")
+
                 )
+
             }
             if(roomRequest.maxPlayer >MAX_ROOM_SIZE){
                 call.respond(HttpStatusCode.OK,

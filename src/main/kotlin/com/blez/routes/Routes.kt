@@ -6,6 +6,7 @@ import io.ktor.server.routing.*
 
 fun Route.Root(){
 
+
         get("/") {
             call.respond("Welcome to my game server.")
         }
